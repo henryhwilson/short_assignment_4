@@ -1,12 +1,22 @@
-import $ from 'jquery';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+import SearchBar from './components/search_bar';
 import './style.scss';
 
-// Called every second. Determines if "second" is plural, then displays
-// number of seconds while incrementing counter with "counter++"
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-let counter = 0;
+  }
 
-setInterval(() => {
-  const s = counter === 1 ? '' : 's';
-  $('#main').html(`You've been on this page for ${counter++} second${s}.`);
-}, 1000);
+  render() {
+    return (
+      <div>
+        <SearchBar />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('main'));
